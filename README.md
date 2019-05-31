@@ -1,2 +1,2 @@
 # -Weasy5.github.io
-![image](https://github.com//-Weasy5.github.io/raw/master/信息图.jpg)
+https://github.com/Weasy5/-Weasy5.github.io/blob/master/t01d6786bbbdac17345.jpg
