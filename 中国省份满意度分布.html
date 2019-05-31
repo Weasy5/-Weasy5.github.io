@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+   <head>
+       <meta charset="utf-8">
+   </head>
+   <body style="height: 100%; margin: 0">
+       <div id="container" style="height: 100%"></div>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-gl/echarts-gl.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-stat/ecStat.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/dataTool.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/china.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/world.js"></script>
+       <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=mvA5L3PV7aOXmIdCmG8RjU3Fce4rqDqj"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/simplex.js"></script>
+       <script type="text/javascript">
+var dom = document.getElementById("container");
+var myChart = echarts.init(dom);
+var app = {};
+option = null;
+option = {
+    title : {
+        text: '中国各个省份满意度分布',
+		//subtext: '(左边图例点击可单独显示)',
+		textStyle:{
+			fontSize: 30
+			//padding: [10,0,0,0]
+			},
+		
+        left: 'center'
+    },
+    tooltip : {
+        trigger: 'item'
+    },
+    legend: {
+        orient: 'vertical',
+        left: 'left',
+		top: 35,
+        data:['满意度分数'],
+		textStyle:{
+			fontSize:20,
+			fontStyle: 'italic'
+		},
+		text: 'zuobia'
+    },
+    visualMap: {
+        min: 200000000,
+        max: 250000000,
+        left: 'left',
+        top: 'bottom',
+        text:['高','低'],           // 文本，默认为数值文本
+        calculable : true
+    },
+    toolbox: {
+        show: true,
+        orient : 'vertical',
+        left: 'right',
+        top: 'center',
+        feature : {
+            mark : {show: true},
+            dataView : {show: true, readOnly: false},
+            restore : {show: true},
+            saveAsImage : {show: true}
+        }
+    },
+    series : [
+        {
+            name: '满意度分数',
+            type: 'map',
+            mapType: 'china',
+            roam: false,
+            label: {
+                normal: {
+                    show: false
+                },
+                emphasis: {
+                    show: true
+                }
+            },
+            data:[
+                 {name: '北京',value:215446605},
+                {name: '上海',value: 226097970},
+                {name: '河南',value: 208957732},
+                {name: '云南',value: 213899405},
+                {name: '辽宁',value: 209529050},
+                {name: '黑龙江',value: 204870084},
+                {name: '湖南',value: 211854246},
+                {name: '安徽',value: 207233776},
+                {name: '山东',value: 212214853},
+                {name: '新疆',value: 218058965},
+                {name: '江苏',value: 216732979},
+                {name: '浙江',value: 219174214},
+                {name: '湖北',value: 214312382},
+                {name: '山西',value: 210949839},
+                {name: '内蒙古',value: 201824062},
+                {name: '陕西',value: 216382406},
+                {name: '福建',value: 205196287},
+                {name: '广东',value: 206804489},
+                {name: '青海',value: 204718433},
+                {name: '四川',value: 214795500},
+                {name: '天津',value: 212179150},
+				{name: '甘肃',value: 210216163},
+				{name: '广西',value: 203386143},
+				{name: '贵州',value: 209703640},
+				{name: '河北',value: 208879179},
+				{name: '吉林',value: 207067253},
+				{name: '江西',value: 207784229},
+				{name: '宁夏',value: 208654579},
+				{name: '重庆',value: 222282028},
+            ]
+        
+           
+       
+        }
+    ]
+};;
+if (option && typeof option === "object") {
+    myChart.setOption(option, true);
+}
+       </script>
+   </body>
+</html>
