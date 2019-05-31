@@ -1,2 +1,2 @@
 # -Weasy5.github.io
-![image](https://github.com//dotvim/raw/master/screenshots/vim-screenshot.jpg)
+![image](https://github.com//Weasy5/raw/master/信息.jpg)
